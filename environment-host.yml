@@ -1,0 +1,18 @@
+name: xeus-cling
+channels:
+  - conda-forge
+dependencies:
+  # Build dependencies
+  - cmake
+  # Host dependencies
+  - xeus-zmq=1.1.0
+  - cling=0.9
+  - nlohmann_json
+  - cppzmq
+  - xtl=0.7
+  - pugixml
+  - cpp-argparse
+  # Test dependencies
+  - pytest
+  - jupyter_kernel_test
+  - doctest >= 2.4.6
