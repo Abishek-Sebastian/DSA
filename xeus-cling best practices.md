@@ -9,7 +9,7 @@ Some rules while coding in xeus-cling:
 7. Enclose the code contained in a cell using {.} in order to create a closed scope for the variables and hence enabling multiple reruns.
 8. Do not define two functions in the same cell.
 9. Add ";;" after lambdas. Eg. auto same = [](int i) { return i; };;
-10. Higher order functions : pass input functions by universal reference.
+10. Higher order functions : pass input functions by universal reference.  
 Eg.  
 Wrong:  
 int add1(int i) { return i + 1; }  
