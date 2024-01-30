@@ -10,23 +10,27 @@ Some rules while coding in xeus-cling:
 8. Do not define two functions in the same cell.
 9. Add ";;" after lambdas. Eg. auto same = [](int i) { return i; };;
 10. Higher order functions : pass input functions by universal reference.
-Eg.
-Wrong:
-int add1(int i) { return i + 1; }
-// This higher order function capture its input function (f) by copy
-auto call_twice = [] (auto f) {
-    return [&](auto x) {
-      return f(f(x)); 
-    };
-};;
-auto add2 = call_twice(add1);;
-
-Right:
-int add1(int i) { return i + 1; }
-// This higher order function capture its input by universal reference (&&)
-auto call_twice = [] (auto && f) {
-    return [&](auto x) {
-      return f(f(x)); 
-    };
-};;
-auto add2 = call_twice(add1);;
+Eg.  
+Wrong:  
+int add1(int i) { return i + 1; }  
+// This higher order function capture its input function (f) by copy  
+auto call_twice = [] (auto f)  
+{  
+    return [&](auto x)  
+    {  
+      return f(f(x));   
+    };  
+};;  
+auto add2 = call_twice(add1);;  
+  
+Right:  
+int add1(int i) { return i + 1; }  
+// This higher order function capture its input by universal reference (&&)  
+auto call_twice = [] (auto && f)   
+{  
+    return [&](auto x)   
+    {  
+      return f(f(x));   
+    };  
+};;  
+auto add2 = call_twice(add1);;  
